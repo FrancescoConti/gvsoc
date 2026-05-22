@@ -34,10 +34,34 @@ Please also check any README.md in the submodules for target-specific requiremen
 
 ## Python requirements
 
-Additional Python packages are needed and can be installed with the following commands from root folder:
+Additional Python packages are needed. First initialize the submodules:
 
 ```bash
 git submodule update --init --recursive -j8
+```
+
+### Using uv (recommended)
+
+[uv](https://github.com/astral-sh/uv) is a fast Python package manager. Install it with:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then create a virtual environment and install the requirements:
+
+```bash
+uv venv
+source .venv/bin/activate
+uv pip install -r core/requirements.txt
+uv pip install -r gapy/requirements.txt
+```
+
+### Using pip
+
+Alternatively, install the packages directly with pip (potentially in a virtual env):
+
+```bash
 pip3 install -r core/requirements.txt
 pip3 install -r gapy/requirements.txt
 ```
