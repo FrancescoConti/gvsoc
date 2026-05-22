@@ -92,6 +92,11 @@ build: gvrun.build
 	cd $(CURDIR) && $(CMAKE) --install $(BUILDDIR)
 
 
+# Include the hwpe tutorial related make files
+include core/docs/developer_manual/tutorials/hwpe/helpers.mk
+include core/docs/developer_manual/tutorials/hwpe/tasks.mk
+include core/docs/developer_manual/tutorials/hwpe/solutions.mk
+
 clean:
 	rm -rf $(BUILDDIR) $(INSTALLDIR)
 
